@@ -4,6 +4,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 84px;
+  margin-top: 20px;
 }
 
 .main-section {
@@ -12,22 +13,37 @@ main {
   align-items: center;
   flex-direction: column;
 
+  gap: 20px;
+
+  font-family: "Roboto", sans-serif;
+
   @media (min-width: 1080px) {
     flex-direction: row;
   }
-
-  font-family: "Roboto", sans-serif;
 
   span {
     font-size: 20px;
     font-weight: 700;
     color: $secondary-text;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   h1 {
     font-size: 72px;
     font-weight: 900;
     color: $primary-text;
+
+    @media (min-width: 768px) {
+      font-size: 72px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -37,22 +53,34 @@ main {
   align-items: center;
   justify-content: center;
 
-  gap: 70px;
+  gap: 40px;
+
+  @media (min-width: 1080px) {
+    flex-direction: row;
+  }
 
   .benefit-data {
     border-bottom: 10px solid $secondary-color;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 
     h2 {
       font-family: "Roboto", sans-serif;
       font-size: 60px;
       font-weight: 600;
       color: $primary-text;
+
+      @media (min-width: 768px) {
+        font-size: 60px;
+      }
     }
   }
 
   p {
-    font: italic 300 40px "Poppins", sans-serif;
+    font: italic 300 24px "Poppins", sans-serif;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+    }
 
     b {
       font-style: normal;
@@ -65,14 +93,25 @@ main {
       -webkit-text-fill-color: transparent;
     }
   }
-
-  @media (min-width: 1080px) {
-    flex-direction: row;
-  }
 }
 
 .cta-section {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: $primary-text;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+  }
 }

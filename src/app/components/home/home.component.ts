@@ -3,11 +3,20 @@ import { Component } from '@angular/core';
 import { BtnPrimaryComponent } from '@components/btn-primary/btn-primary.component';
 import { HeaderComponent } from '@components/header/header.component';
 import { NewsletterFormComponent } from '@components/newsletter-form/newsletter-form.component';
+import { BenefitComponent } from '../benefit/benefit.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, NgOptimizedImage, BtnPrimaryComponent, NewsletterFormComponent],
+  imports: [
+    HeaderComponent,
+    NgOptimizedImage,
+    BtnPrimaryComponent,
+    NewsletterFormComponent,
+    BenefitComponent,
+    FooterComponent,
+  ],
   providers: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
