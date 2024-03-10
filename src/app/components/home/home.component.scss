@@ -1,5 +1,11 @@
 @import "../../../color_variables.scss";
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 84px;
+}
+
 .main-section {
   display: flex;
   justify-content: center;
@@ -31,6 +37,8 @@
   align-items: center;
   justify-content: center;
 
+  gap: 70px;
+
   .benefit-data {
     border-bottom: 10px solid $secondary-color;
     padding-bottom: 40px;
@@ -48,7 +56,11 @@
 
     b {
       font-style: normal;
-      background: -webkit-linear-gradient(180deg, $light-primary-color, $secondary-color);
+      background: -webkit-linear-gradient(
+        180deg,
+        $light-primary-color,
+        $secondary-color
+      );
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -57,4 +69,10 @@
   @media (min-width: 1080px) {
     flex-direction: row;
   }
+}
+
+.cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
