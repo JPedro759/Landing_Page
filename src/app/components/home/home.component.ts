@@ -8,7 +8,6 @@ import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [
     HeaderComponent,
     NgOptimizedImage,

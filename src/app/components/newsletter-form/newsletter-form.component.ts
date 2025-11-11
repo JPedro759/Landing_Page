@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,18 +9,18 @@ import { BtnPrimaryComponent } from '@components/btn-primary/btn-primary.compone
 import { NewsletterService } from '../../services/newsletter.service';
 
 @Component({
-  selector: 'newsletter-form',
-  standalone: true,
-  imports: [BtnPrimaryComponent, ReactiveFormsModule],
-  providers: [NewsletterService],
-  templateUrl: './newsletter-form.component.html',
-  styleUrl: './newsletter-form.component.scss',
+    selector: 'app-newsletter-form',
+    imports: [BtnPrimaryComponent, ReactiveFormsModule],
+    providers: [NewsletterService],
+    templateUrl: './newsletter-form.component.html',
+    styleUrl: './newsletter-form.component.scss'
 })
 export class NewsletterFormComponent {
+  #service = inject(NewsletterService)
   newsLetterForms!: FormGroup;
   loading = signal(false);
 
-  constructor(private service: NewsletterService) {
+  constructor() {
     this.newsLetterForms = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -31,7 +31,7 @@ export class NewsletterFormComponent {
     this.loading.set(true);
 
     if (this.newsLetterForms.valid) {
-      this.service
+      this.#service
         .sendData(
           this.newsLetterForms.value.name,
           this.newsLetterForms.value.email
