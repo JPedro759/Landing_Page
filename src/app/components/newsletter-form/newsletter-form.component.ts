@@ -9,14 +9,14 @@ import { BtnPrimaryComponent } from '@components/btn-primary/btn-primary.compone
 import { NewsletterService } from '../../services/newsletter.service';
 
 @Component({
-    selector: 'app-newsletter-form',
-    imports: [BtnPrimaryComponent, ReactiveFormsModule],
-    providers: [NewsletterService],
-    templateUrl: './newsletter-form.component.html',
-    styleUrl: './newsletter-form.component.scss'
+  selector: 'app-newsletter-form',
+  imports: [BtnPrimaryComponent, ReactiveFormsModule],
+  providers: [NewsletterService],
+  templateUrl: './newsletter-form.component.html',
+  styleUrl: './newsletter-form.component.scss',
 })
 export class NewsletterFormComponent {
-  #service = inject(NewsletterService)
+  #service = inject(NewsletterService);
   newsLetterForms!: FormGroup;
   loading = signal(false);
 
